@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vinicch/shortener-go/core/domain"
+	"github.com/vinicch/shortener-go/domain"
 )
 
 func TestRetrieve(t *testing.T) {
@@ -34,7 +34,7 @@ func TestRetrieveInput(t *testing.T) {
 
 	_, err := Retrieve(getURLStub, updateURLStub, alias)
 
-	assert.EqualError(t, err, domain.AliasNotInformed)
+	assert.EqualError(t, err, aliasNotInformed)
 }
 
 func TestRetrieveDeps(t *testing.T) {

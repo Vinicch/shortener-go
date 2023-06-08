@@ -1,4 +1,4 @@
-package web
+package handlers
 
 type errorResponse struct {
 	Code        string `json:"ERR_CODE"`

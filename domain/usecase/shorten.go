@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/vinicch/shortener-go/core/domain"
-	"github.com/vinicch/shortener-go/core/port"
+	"github.com/vinicch/shortener-go/domain"
+	"github.com/vinicch/shortener-go/domain/port"
 )
 
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

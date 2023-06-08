@@ -1,6 +1,6 @@
 package port
 
-import "github.com/vinicch/shortener-go/core/domain"
+import "github.com/vinicch/shortener-go/domain"
 
 // Gets information about an URL from the repository
 type GetURL func(string) (*domain.Url, error)

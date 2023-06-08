@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/vinicch/shortener-go/core/domain"
-	"github.com/vinicch/shortener-go/core/port"
+	"github.com/vinicch/shortener-go/domain"
+	"github.com/vinicch/shortener-go/domain/port"
 )
 
 // Gets the 10 most visited URLs

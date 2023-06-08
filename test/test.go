@@ -8,9 +8,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
-	"github.com/vinicch/shortener-go/adapters/logging"
-	"github.com/vinicch/shortener-go/adapters/repository"
-	"github.com/vinicch/shortener-go/adapters/web"
+	"github.com/vinicch/shortener-go/handlers"
+	"github.com/vinicch/shortener-go/logging"
+	"github.com/vinicch/shortener-go/repository"
 )
 
 func setup() *gin.Engine {
@@ -20,9 +20,9 @@ func setup() *gin.Engine {
 	urlFunctions := repository.MakeURLFunctions()
 	router := gin.Default()
 
-	router.POST("/create", web.Create(urlFunctions.CreateURL, urlFunctions.DoesAliasExist))
-	router.GET("/url/:alias", web.Retrieve(urlFunctions.GetURL, urlFunctions.UpdateURL))
-	router.GET("/most-visited", web.MostVisited(urlFunctions.GetMostVisited))
+	router.POST("/create", handlers.Create(urlFunctions.CreateURL, urlFunctions.DoesAliasExist))
+	router.GET("/url/:alias", handlers.Retrieve(urlFunctions.GetURL, urlFunctions.UpdateURL))
+	router.GET("/most-visited", handlers.MostVisited(urlFunctions.GetMostVisited))
 
 	return router
 }

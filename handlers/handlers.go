@@ -1,4 +1,4 @@
-package web
+package handlers
 
 import (
 	"fmt"
@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/vinicch/shortener-go/core/domain"
-	"github.com/vinicch/shortener-go/core/port"
-	"github.com/vinicch/shortener-go/core/usecase"
+	"github.com/vinicch/shortener-go/domain"
+	"github.com/vinicch/shortener-go/domain/port"
+	"github.com/vinicch/shortener-go/domain/usecase"
 )
 
 // Errors

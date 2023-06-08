@@ -5,14 +5,16 @@ import (
 	"strings"
 
 	"github.com/rs/zerolog/log"
-	"github.com/vinicch/shortener-go/core/domain"
-	"github.com/vinicch/shortener-go/core/port"
+	"github.com/vinicch/shortener-go/domain"
+	"github.com/vinicch/shortener-go/domain/port"
 )
+
+const aliasNotInformed = "'alias' parameter not informed"
 
 // Gets an URL that corresponds to a given alias
 func Retrieve(getURL port.GetURL, updateURL port.UpdateURL, alias string) (string, error) {
 	if strings.TrimSpace(alias) == "" {
-		return "", errors.New(domain.AliasNotInformed)
+		return "", errors.New(aliasNotInformed)
 	}
 
 	url, err := getURL(alias)

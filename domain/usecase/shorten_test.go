@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vinicch/shortener-go/core/domain"
+	"github.com/vinicch/shortener-go/domain"
 )
 
 func TestShorten(t *testing.T) {

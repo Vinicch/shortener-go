@@ -6,9 +6,9 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/joho/godotenv/autoload"
-	"github.com/vinicch/shortener-go/adapters/logging"
-	"github.com/vinicch/shortener-go/adapters/repository"
-	"github.com/vinicch/shortener-go/adapters/web"
+	"github.com/vinicch/shortener-go/handlers"
+	"github.com/vinicch/shortener-go/logging"
+	"github.com/vinicch/shortener-go/repository"
 )
 
 func main() {
@@ -21,9 +21,9 @@ func main() {
 		AllowOrigins: []string{os.Getenv("CLIENT_URL")},
 	}))
 
-	router.POST("/create", web.Create(urlFunctions.CreateURL, urlFunctions.DoesAliasExist))
-	router.GET("/url/:alias", web.Retrieve(urlFunctions.GetURL, urlFunctions.UpdateURL))
-	router.GET("/most-visited", web.MostVisited(urlFunctions.GetMostVisited))
+	router.POST("/create", handlers.Create(urlFunctions.CreateURL, urlFunctions.DoesAliasExist))
+	router.GET("/url/:alias", handlers.Retrieve(urlFunctions.GetURL, urlFunctions.UpdateURL))
+	router.GET("/most-visited", handlers.MostVisited(urlFunctions.GetMostVisited))
 
 	router.Run()
 }
